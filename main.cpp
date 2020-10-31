@@ -84,6 +84,9 @@ int main() {
 
 	Leader car("../img/car.png", 790, 1215);
 
+	car.add_followers(runner);
+	car.add_followers(circle);
+
 	Vector2f center(car.getX(), car.getY());
 
 	Vector2f halfSize(WINDOW_SIZE.x / 2.f, WINDOW_SIZE.y / 2.f);
@@ -97,7 +100,8 @@ int main() {
 		Event event;
 		while (app.pollEvent(event)) // Boucle des évènements de la partie pause
 		{
-			if ((event.type == Event::KeyPressed && event.key.code == sf::Keyboard::Escape) || event.type == Event::Closed)
+			if ((event.type == Event::KeyPressed && event.key.code == sf::Keyboard::Escape) || 
+				event.type == Event::Closed)
 			{
 				app.close();
 			}

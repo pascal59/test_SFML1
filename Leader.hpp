@@ -27,7 +27,7 @@ public:
 
 	void draw(sf::RenderWindow &app);
 
-	void add_followers(Follower &&followers);
+	void add_followers(Follower &followers);
 
 private:
 	float x_, y_;

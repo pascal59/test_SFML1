@@ -34,7 +34,7 @@ void Leader::move()
 {
     x_ += static_cast<float>(cos(angle_ * M_PI / 180.0) * speed_);
     y_ += static_cast<float>(sin(angle_ * M_PI / 180.0) * speed_);
-
+    sprite_.setPosition(this->getX(), this->getY());
         for (auto &ifol : followers)
     {
         ifol.move(x_, y_, angle_);
@@ -86,11 +86,12 @@ void Leader::speedDown()
     }
 }
 
-void Leader::add_followers(Follower &&followers) {}
+void Leader::add_followers(Follower &follower) {
+    followers.push_back(follower);
+}
 
 void Leader::draw(sf::RenderWindow &app)
 {
-    sprite_.setPosition(this->getX(), this->getY());
     app.draw(sprite_);
     for (auto &ifol : followers)
     {
