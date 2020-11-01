@@ -1,3 +1,5 @@
+#define _USE_MATH_DEFINES
+#include <cmath>
 #include <cstdlib>
 #include <iostream>
 #include "Follower.hpp"
@@ -15,9 +17,9 @@ Follower::Follower(const std::string &filename,
     rect_.width = width;
     rect_.height = height;
 
-    if (!image_.loadFromFile(filename))
+    if (!image_.loadFromFile(path_image + filename))
     {
-        std::cerr << "Cannot load picture : " << filename << std::endl;
+        std::cerr << "Cannot load picture : " << path_image + filename << std::endl;
         exit(EXIT_FAILURE); // On ferme le programme
     }
     sprite_.setTexture(image_);

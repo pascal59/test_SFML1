@@ -1,12 +1,19 @@
 #pragma once
 #define _USE_MATH_DEFINES
-#include <string>
 #include <cmath>
+#include <string>
 #include <SFML/Graphics.hpp>
-#include "Follower.hpp"
 
-constexpr float sliced_time = 0.08;
-constexpr float one_degree  = M_PI / 180.;
+
+
+#ifdef _MSC_VER 
+#define _PATH_IMG_ "../../../img/"
+#else
+#define _PATH_IMG_ "../img/"
+#endif
+
+constexpr float sliced_time = 0.08f;
+const std::string path_image(_PATH_IMG_);
 
 struct Animation_setting {
 	int initial_pos_x_;

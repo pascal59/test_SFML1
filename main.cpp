@@ -20,8 +20,9 @@ int main() {
 
 	Texture backgroundImage;
 	Sprite backgroundSprite;
-	if (!backgroundImage.loadFromFile("../img/background.png")) {
-	 	cerr << "Cannot load image file : " << "../img/background.png" << endl;
+
+	if (!backgroundImage.loadFromFile(path_image+"background.png")) {
+	 	cerr << "Cannot load image file : " << path_image + "background.png" << endl;
 	 	return EXIT_FAILURE; // On ferme le programme
 	}
 	
