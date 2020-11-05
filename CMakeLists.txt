@@ -15,13 +15,6 @@ SET(IMG_DIRECTORY "IMG=${CMAKE_SOURCE_DIR}/img")
 SET(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Configs" FORCE)
 
 if(MSVC)
-#    add_compile_options(
-#        $<$<CONFIG:>:/MT> #---------|
-#        $<$<CONFIG:Debug>:/MTd> #---|-- Statically link the runtime libraries
-#        $<$<CONFIG:Release>:/MT> #--|
-#    )
-#    set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MT")
-#    set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MTd")
     foreach(CompilerFlag ${CompilerFlags})
         string(REPLACE "/MD" "/MT" ${CompilerFlag} "${${CompilerFlag}}")
     endforeach()
