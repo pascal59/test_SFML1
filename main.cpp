@@ -30,25 +30,6 @@ int main() {
 
 
 
-	// Fond d'écran
-	// Texture backgroundImage, carImage, runnerImage, circleImage;
-	// Sprite backgroundSprite, carSprite, runnerSprite, circleSprite;
-
-	// if (!backgroundImage.loadFromFile("../img/background.png") ||
-	// 	!carImage.loadFromFile("../img/car.png") ||
-	// 	!runnerImage.loadFromFile("../img/runner.png")||
-	// 	!circleImage.loadFromFile("../img/sprites_final.png")) {
-	// 	cerr << "Erreur pendant le chargement des images" << endl;
-	// 	return EXIT_FAILURE; // On ferme le programme
-	// }
-
-	// backgroundSprite.setTexture(backgroundImage);
-	// carSprite.setTexture(carImage);
-	// carSprite.setPosition(sf::Vector2f(20, 34));
-	// carSprite.setScale(sf::Vector2f(0.5, 0.5));
-	// Car car(790, 1215, 0, 0);
-
-/********************************/
 	sf::IntRect rect_runner;
 
 
@@ -115,28 +96,18 @@ int main() {
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))	{
 			car.turnLeft();
-			// carSprite.setRotation(car.getAngle());
-			// runnerSprite.setRotation(car.getAngle());
-			// circleSprite.setRotation(car.getAngle());
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
 			car.turnRight();
-			// carSprite.setRotation(car.getAngle());
-			// runnerSprite.setRotation(car.getAngle());
-			// circleSprite.setRotation(car.getAngle());
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
 			car.speedUp();
-			// runner.speedUp();
-			// circle.speedUp();
 		}
 		else
 		{
 			car.speedDown();
-			// runner.speedDown();
-			// circle.speedDown();
 		}
 
 		// Affichages
@@ -144,15 +115,6 @@ int main() {
 		app.draw(backgroundSprite);
 
 		car.draw(app);
-
-		// carSprite.setPosition(car.getX(), car.getY());
-		// runnerSprite.setPosition(runner.getX(), runner.getY());
-		// runnerSprite.setTextureRect(rect_runner);
-		// circleSprite.setPosition(circle.getX(), circle.getY());
-		// circleSprite.setTextureRect(rect_circle);
-		// app.draw(carSprite);
-		// app.draw(runnerSprite);
-		// app.draw(circleSprite);
 
 		app.display();
 	}
